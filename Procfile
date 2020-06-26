@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run semi_automated.py
+web:sh setup.sh && streamlit run semi_automated.py
