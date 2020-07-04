@@ -7,8 +7,8 @@
  ## https://semi-automated-ml-model.herokuapp.com/
 
 ## steps : 
-1 . clone or download the code and run it on your machine !
-2 . Go to heroku website and do the deployment !
+### 1 . clone or download the code and run it on your machine !
+### 2 . Go to heroku website and do the deployment !
 
 ### All the packages required are in the requirements.txt file 
 
