@@ -2,7 +2,7 @@
 
 ### I have built a simple web app model which predicts the price of flight given the departure time , arrival time , date of journey , airline etc !
 
-### This was a fun project as the dataset which I had was categorical and to convert that into meaningful and mapping numerical vlues took me some time !
+### This was a fun project as the dataset which I had was categorical and to convert that into meaningful and mapping numerical values took me some time !
 ### The accuracy on test data is 80 % and train data 88 %
 ### I have also included the dataset (air_train.xlsx and air_test.xlsx) , the (flight_pred_main.ipynb) file and the pickle file !
 
