@@ -11,4 +11,5 @@ matplotlib>=1.4.3
 pandas>=0.19
 flasgger==0.9.4
 seaborn==0.10.1
+emoji==0.5.4
 streamlit
