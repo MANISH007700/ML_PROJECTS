@@ -9,7 +9,7 @@
 # Demo Link
 ### https://flight-price-prediction-model.herokuapp.com/
 
-# Deployment
+# Deployment.
 ### Heroku
 ### Front and Back end -- Streamlit
 
