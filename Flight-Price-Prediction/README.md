@@ -4,7 +4,7 @@
 
 ### This was a fun project as the dataset which I had was categorical and to convert that into meaningful and mapping numerical values took me some time !
 ### The accuracy on test data is 80 % and train data 88 %
-### I have also included the dataset (air_train.xlsx and air_test.xlsx) , the (flight_pred_main.ipynb) file and the pickle file !
+### I have also included the dataset (air_train.xlsx and air_test.xlsx) , the (flight_pred_main (1).ipynb) file and the pickle file !
 
 # Demo Link
 ### https://flight-price-prediction-model.herokuapp.com/
