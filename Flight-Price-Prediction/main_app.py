@@ -14,37 +14,47 @@ def main():
     st.write(e)
 
     st.sidebar.subheader("Select Departure")
-    dep = st.sidebar.date_input("Day")
-    mon_d = dep.month
-    day_d = dep.day
+    m = pd.to_datetime("today").month
+    d = pd.to_datetime("today").day
+    y = pd.to_datetime("today").year
+    
+    dep = st.sidebar.date_input("Day" , datetime.date(y,m,d))
+    if dep is not None:
+        mon_d = dep.month
+        day_d = dep.day
 
-    hour_1 = st.sidebar.selectbox("Hour", list(range(1,25)))
-    minute_1 = st.sidebar.selectbox("Minute", list(range(0,61)))
+        hour_1 = st.sidebar.selectbox("Hour", list(range(1,25)))
+        minute_1 = st.sidebar.selectbox("Minute", list(range(0,61)))
 
     st.subheader("Departure Time :")
     x = "2020" + "/"  +str(mon_d) + "/" + str(day_d) + " " + str(hour_1) + ":" + str(minute_1)
     if x is not None:
+        
         op = pd.to_datetime([x])
-        st.write(op.item())
+        if op is not None:
+            st.write(op.item())
     
 
     st.sidebar.subheader("Select Arrival")
-    arr = st.sidebar.date_input("Day.")
+    arr = st.sidebar.date_input("Day." , datetime.date(y,m,d+1))
+    if arr is not None:
     
-    mon_a = arr.month
-    day_a = arr.day
-    
-    
+        mon_a = arr.month
+        day_a = arr.day
+        
+        
 
-    hour_2 = st.sidebar.selectbox("Hour.", list(range(1,25)))
-    minute_2 = st.sidebar.selectbox("Minute.", list(range(0,61)))
+        hour_2 = st.sidebar.selectbox("Hour.", list(range(1,25)) ,2)
+        minute_2 = st.sidebar.selectbox("Minute.", list(range(0,61)))
 
     st.subheader("Arrival Time :")
     x1 = "2020" + "/"  +str(mon_a) + "/" + str(day_a) + " " + str(hour_2) + ":" + str(minute_2)
     if x1 is not None:
-        op1 = pd.to_datetime([x1] )
-        st.write(op1.item())
         
+        op1 = pd.to_datetime([x1] )
+        if op1 is not None:
+            st.write(op1.item())
+            
 
 
 
@@ -112,20 +122,23 @@ def main():
     stop = st.selectbox("   " , [0,1,2,3,4])
     st.write("Stops -- ", stop)
 
-    
-    if op1 is not None:
-        st.subheader("Duration ")
-        st.write((op1.item() - op.item()))
+    if st.checkbox("Duration"):
+        if op1 is not None:
+            
+            st.write((op1.item() - op.item()))
 
     
     op2 = str(op1-op)
-
-    hr = int(op2.split(']')[0][-9:-7])
-    mini = int(op2.split(']')[0][-6:-4])
+    if op2 is not None:
+        hr = int(op2.split(']')[0][-9:-7])
+        mini = int(op2.split(']')[0][-6:-4])
 
 
 
     #model
+    #model = open(r'C:\Users\MANISH SHARMA\Desktop\vscodes\main_flight_rfr.pkl', "rb")
+    #rfr_model = pickle.load(model)
+
     rfr_model = pickle.load(open("main_flight_rfr.pkl", "rb"))
 
     #prediction
